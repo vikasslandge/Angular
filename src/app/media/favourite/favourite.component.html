@@ -1,0 +1,30 @@
+<p>
+  favourite works!
+</p>
+<Div  >
+    <div style="background-color: black">
+    <div align="center" *ngIf="playFlag">
+      <video [src]="currentVideo" controls   height="400px" width="700px"></video>
+    </div>
+    
+    <div>
+      <table class="table" style="background-color: snow"> 
+        <thead class="thead-dark">
+          <th>Id</th>
+          <th>Name </th>
+          <th>Category</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of favourites" >
+            <td>{{v.id}}</td>
+            <td>{{v.name|titlecase  }}</td>
+            <td>{{v.category}}</td>
+            <td><button class="btn btn-info"(click)="Play(v)">Play</button></td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</Div>

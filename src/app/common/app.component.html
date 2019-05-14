@@ -1,2 +1,12 @@
  <h2  class="jumbptron btn-info" align="center">Home </h2>
- <app-media></app-media>
+ <div>
+        <div align="center">
+          <button class="btn btn-success" (click)="Choice(1)">All Videos</button>&nbsp;&nbsp;
+          <button class="btn btn-danger" (click)="Choice(2)">Favourites</button>&nbsp;&nbsp;
+          <button class="btn btn-primary" (click)="Choice(3)">Recommended</button>&nbsp;&nbsp;
+        </div>
+        <br><br>
+      </div>
+ <app-media *ngIf="allVideosFlag"></app-media>
+ <app-favourite *ngIf="favouritesFlag"></app-favourite>
+ <app-recommended *ngIf="recommendedFlag"></app-recommended>

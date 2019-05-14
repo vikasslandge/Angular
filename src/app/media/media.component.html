@@ -1,19 +1,21 @@
-<div>
+<!-- <div>
   <div align="center">
     <button class="btn btn-success" (click)="Choice(1)">All Videos</button>&nbsp;&nbsp;
     <button class="btn btn-danger" (click)="Choice(2)">Favourites</button>&nbsp;&nbsp;
     <button class="btn btn-primary" (click)="Choice(3)">Recommended</button>&nbsp;&nbsp;
   </div>
   <br><br>
-</div>
+</div> -->
 
-<Div *ngIf="allVideosFlag">
+<Div>
 <div style="background-color: black">
 <div align="center" *ngIf="playFlag">
   <video [src]="currentVideo" controls   height="400px" width="700px"></video>
-</div>
-
-<div>
+ </div>
+ 
+  <!-- <input type="text" placeholder="search by category" [(ngModel)]="videoFilter"> -->
+ 
+<div> -->
   <table class="table" style="background-color: snow"> 
     <thead class="thead-dark">
       <th>Id</th>
@@ -23,7 +25,7 @@
       <th></th>
     </thead>
     <tbody>
-      <tr *ngFor="let v of videos" >
+      <tr *ngFor="let v of videos " >
         <td>{{v.id}}</td>
         <td>{{v.name|titlecase }}</td>
         <td>{{v.category}}</td>
@@ -36,58 +38,3 @@
 </div>
 </Div>
 
-<Div *ngIf="favouritesFlag">
-    <div style="background-color: black">
-    <div align="center" *ngIf="playFlag">
-      <video [src]="currentVideo" controls   height="400px" width="700px"></video>
-    </div>
-    
-    <div>
-      <table class="table" style="background-color: snow"> 
-        <thead class="thead-dark">
-          <th>Id</th>
-          <th>Name </th>
-          <th>Category</th>
-          <th></th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let v of favourites" >
-            <td>{{v.id}}</td>
-            <td>{{v.name|titlecase  }}</td>
-            <td>{{v.category}}</td>
-            <td><button class="btn btn-info"(click)="Play(v)">Play</button></td>
-            
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-</Div>
-<!-- Recommmeded videos -->
-<Div *ngIf="recommendedFlag">
-    <div style="background-color: black">
-    <div align="center" *ngIf="playFlag">
-      <video [src]="currentVideo" controls   height="400px" width="700px"></video>
-    </div>
-    
-    <div>
-      <table class="table" style="background-color: snow"> 
-        <thead class="thead-dark">
-          <th>Id</th>
-          <th>Name </th>
-          <th>Category</th>
-          <th></th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let v of recommended" >
-            <td>{{v.id}}</td>
-            <td>{{v.name|titlecase  }}</td>
-            <td>{{v.category}}</td>
-            <td><button class="btn btn-info"(click)="Play(v)">Play</button></td>
-            
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-</Div>
